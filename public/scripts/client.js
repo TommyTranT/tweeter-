@@ -49,17 +49,22 @@ $(() => {
     return $tweet
   };
 
+
   const $form = $('#new-tweet');
 
   $form.on('submit', (event) => {
     event.preventDefault();
 
-    if(!tweet.content.text.length() < 4) {
-    alert("hello")
-  } 
+    if (!$("#inputted-tweet").val()){
+      alert('Tweet is empty')
+    }
+
+
+
+    console.log($("#inputted-tweet").val())
 
     const serializedData = $form.serialize();
-    console.log(serializedData);
+    // console.log(serializedData);
 
     $.post('/tweets', serializedData, (response) => {
       console.log(response);
