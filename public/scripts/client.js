@@ -14,6 +14,8 @@ $(() => {
           const $tweet = renderTweet(tweet);
 
           $tweetContainer.prepend($tweet);
+          $("#inputted-tweet").val('')
+         
         }
       }
     })
@@ -22,7 +24,6 @@ $(() => {
   fetchTweets();
 
   const renderTweet = (tweet) => {
-    $('time.timeago').timeago();
     const $tweet = $(`
       <header class="tweet-header">
           <div>
@@ -37,7 +38,7 @@ $(() => {
           </div>
 
       <footer class="tweet-footer">
-        <small class ="footer-days">${tweet.created_at}</small>
+        <small class ="footer-days">${timeago.format(tweet.created_at)}</small>
         <span class="footer-icons">
           <a href="#"><i class="fa fa-flag"></i></a>
           <a href="#"><i class="fa fa-retweet"></i></a>
@@ -49,17 +50,19 @@ $(() => {
     return $tweet
   };
 
-
   const $form = $('#new-tweet');
 
   $form.on('submit', (event) => {
     event.preventDefault();
 
     if (!$("#inputted-tweet").val()){
-      alert('Tweet is empty')
+      return alert('Tweet is empty') 
     }
 
-
+    if ($("#inputted-tweet").val().length > 141){
+      alert('Tweet is too long')
+      return
+    }
 
     console.log($("#inputted-tweet").val())
 
@@ -68,11 +71,10 @@ $(() => {
 
     $.post('/tweets', serializedData, (response) => {
       console.log(response);
+      fetchTweets();
     });
 
-    fetchTweets();
   });
 
 }); // End of Doc.ready.
 
-//         <small class ="footer-days">${tweet.created_at}</small>
