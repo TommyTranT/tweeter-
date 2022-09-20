@@ -25,7 +25,7 @@ $(() => {
 
   const renderTweet = (tweet) => {
     const $tweet = $(`
-    
+    <div class="each-tweet">
       <header class="tweet-header">
           <div class="avatar-name">
             <img class="avatars"src=${tweet.user.avatars} />
@@ -46,7 +46,7 @@ $(() => {
           <a href="#"><i class="fa fa-heart hover"></i></a>
         </span>
       </footer>
-
+    </div>
       `)
 
     return $tweet
@@ -59,16 +59,29 @@ $(() => {
 
     if (!$("#inputted-tweet").val()){
       // return alert('Tweet is empty') 
-      // const errorMessage = document.getElementById('error-message');
-      // console.log(`error message`, errorMessage)
-      
-      return $('#error-message').slideDown();
+     
+      const $errrorMessage = $('#error-message');
+      let errorMessage = $errrorMessage.val();
+      errorMessage = errorMessage = "Tweet is empty";
+
+      $errrorMessage.text(errorMessage)
+
+      $errrorMessage.addClass('errorIcon');
+
+      return $errrorMessage.slideDown();
     }
 
     if ($("#inputted-tweet").val().length > 140){
-      alert('Tweet is too long')
-      return
+      const $errrorMessage = $('#error-message');
+      let errorMessage = $errrorMessage.val();
+      errorMessage = "Tweet is too long";
+
+      $errrorMessage.text(errorMessage)
+
+      return $errrorMessage.slideDown();
     }
+
+    $('#error-message').slideUp();
 
     console.log($("#inputted-tweet").val())
 

@@ -120,10 +120,17 @@ span {
 .tweet-footer {
   display: flex;
   justify-content: space-between;
-  padding-bottom: 100px;
 }
 .hover:hover {
   color:#f09800
+}
+.each-tweet {
+  border-color: black;
+  border-style: groove;
+  padding-top: 5%;
+  padding-bottom: 5%;
+  margin-top: 5%;
+  margin-bottom: 5%;
 }
 
 /* Error Message Slidedown */
@@ -136,3 +143,10 @@ span {
   text-align: center;
   width: 100%
 }
+
+.errorIcon {
+  color:red
+}
+
+
+
