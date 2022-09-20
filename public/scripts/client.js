@@ -58,7 +58,11 @@ $(() => {
     event.preventDefault();
 
     if (!$("#inputted-tweet").val()){
-      return alert('Tweet is empty') 
+      // return alert('Tweet is empty') 
+      // const errorMessage = document.getElementById('error-message');
+      // console.log(`error message`, errorMessage)
+      
+      return $('#error-message').slideDown();
     }
 
     if ($("#inputted-tweet").val().length > 140){
