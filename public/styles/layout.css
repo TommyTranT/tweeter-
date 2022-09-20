@@ -20,6 +20,63 @@ body {
   font-size: 24px;
 }
 
+
+
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
+
+/* Navigation Bar */
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 120px;
+  background-color: #4056A1;
+  color: #FFFFFF;
+  position: fixed; 
+  width: 100%; 
+  
+}
+span {
+  margin-left: 1.5em;
+  margin-right: 1.5em;
+}
+.logo {
+  font-family: 'Bungee', sans-serif;
+}
+.bolded { 
+  font-weight: bold; 
+}
+.fa-angles-down {
+  color:red
+}
+.icon-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.button {
+  color: #FFFFFF;
+  background-color: #4056A1;
+} 
+
+/* Profile Image and Name */
+
+.profile-hex {
+  padding-top: 120px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: auto;
+  padding-top: 150px;
+  flex-direction: column;
+  background-color: #f09800;
+  background-image: url("https://www.transparenttextures.com/patterns/diamond-upholstery.png");
+}
+
+/* Character Counter */
+.colorRed {
+  color: red;
+}

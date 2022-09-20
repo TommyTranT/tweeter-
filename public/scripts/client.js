@@ -59,7 +59,7 @@ $(() => {
       return alert('Tweet is empty') 
     }
 
-    if ($("#inputted-tweet").val().length > 141){
+    if ($("#inputted-tweet").val().length > 140){
       alert('Tweet is too long')
       return
     }
