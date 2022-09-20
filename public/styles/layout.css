@@ -18,6 +18,8 @@ body {
   color: #545149;
   background-color: #f4f1ec;
   font-size: 24px;
+  font-family: 'Source Sans Pro', sans-serif;
+
 }
 
 
@@ -74,9 +76,52 @@ span {
   flex-direction: column;
   background-color: #f09800;
   background-image: url("https://www.transparenttextures.com/patterns/diamond-upholstery.png");
+  color: #FFFFFF;
+}
+/* Main Container */
+.container {
+  padding-top: 5%;
+  padding-right: 5%;
+  padding-left: 5%;
 }
 
 /* Character Counter */
 .colorRed {
   color: red;
+}
+
+/* New Tweet */
+#new-tweet {
+  display: flex;
+  flex-direction: column;
+}
+.under-textbox {
+  display: flex;
+  justify-content: space-between;
+}
+.bold-text {
+  font-weight: bold;
+}
+
+/* Tweets on page */
+#tweet-container {
+  padding-top:50px;
+}
+.tweet-header {
+  display: flex;
+  justify-content: space-between;
+}
+.avatar-name {
+  display: flex;
+} 
+.name {
+  font-size: inherit;
+}
+.tweet-footer {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 100px;
+}
+.hover:hover {
+  color:#f09800
 }

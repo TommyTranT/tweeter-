@@ -25,8 +25,9 @@ $(() => {
 
   const renderTweet = (tweet) => {
     const $tweet = $(`
+    
       <header class="tweet-header">
-          <div>
+          <div class="avatar-name">
             <img class="avatars"src=${tweet.user.avatars} />
             <h2 class="name"> ${tweet.user.name}</h2>
           </div>
@@ -40,11 +41,12 @@ $(() => {
       <footer class="tweet-footer">
         <small class ="footer-days">${timeago.format(tweet.created_at)}</small>
         <span class="footer-icons">
-          <a href="#"><i class="fa fa-flag"></i></a>
-          <a href="#"><i class="fa fa-retweet"></i></a>
-          <a href="#"><i class="fa fa-heart"></i></a>
+          <a href="#"><i class="fa fa-flag hover"></i></a>
+          <a href="#"><i class="fa fa-retweet hover"></i></a>
+          <a href="#"><i class="fa fa-heart hover"></i></a>
         </span>
       </footer>
+
       `)
 
     return $tweet
