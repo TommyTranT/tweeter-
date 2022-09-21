@@ -38,6 +38,8 @@
   <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
   <link rel="stylesheet" href="/styles/header.css" type="text/css" />
 
+  <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0' />
+
 
 </head>
 
@@ -50,24 +52,22 @@
       <i class="fa-solid fa-angles-down"></i>
     </div>
   </nav>
-
+<div class="display">
   <header>
     <div class="profile-hex">
       <img src="/images/profile-hex.png">
       <h2>Tommy Tran</h2>
     </div>
   </header>
-
+</body>
 
   <!-- Page-specific (main) content here -->
   <main class="container">
 
       <br />
-      <i class="fa-solid fa-triangle-exclamation"></i>
       <div id="error-message">GET ME</div>
-      <i class="fa-solid fa-triangle-exclamation"></i>
       <br />
- 
+
     <form id="new-tweet">
       <label class="bold-text" for="tweet-text">What are you humming about?</label>
       <input id="inputted-tweet" name="text" />
@@ -78,17 +78,12 @@
       </div>
 
     </form>
-
+  </div>
     <div id="tweet-container"></div>"
     <!-- App JS -->
     <script type="text/javascript" src="/scripts/client.js"></script>
     <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
-    <script type="text/javascript" src="/scripts/slide-down.js"></script>
-
-
-
-
   </main>
-</body>
+
 
 </html>

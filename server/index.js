@@ -15,7 +15,7 @@ app.use(express.urlencoded({extended: false}));
 app.use(express.static("public"));
 
 
-import { format } from 'timeago.js';
+
 // The in-memory database of tweets. It's a basic object with an array in it.
 const db = require("./lib/in-memory-db");
 

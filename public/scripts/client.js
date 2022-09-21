@@ -1,3 +1,8 @@
+// client.js main functions
+// 1. fetchTweets will get tweet api from browser
+// 2. renderTweet constructs tweets from api
+// 3. $form.on will post users tweet to /tweets and run steps 1 and 2 again. 
+
 $(() => {
 
   const $tweetContainer = $('#tweet-container');
@@ -10,10 +15,10 @@ $(() => {
         console.log(`data we fetched`, data);
         $tweetContainer.empty();
 
-        for (const tweet of data) {
+        for (const tweet of data) { // looping through tweets and rendering each one
           const $tweet = renderTweet(tweet);
 
-          $tweetContainer.prepend($tweet);
+          $tweetContainer.prepend($tweet); // adding newest tweet to top of page
           $("#inputted-tweet").val('')
          
         }
@@ -54,11 +59,10 @@ $(() => {
 
   const $form = $('#new-tweet');
 
-  $form.on('submit', (event) => {
+  $form.on('submit', (event) => { 
     event.preventDefault();
 
-    if (!$("#inputted-tweet").val()){
-      // return alert('Tweet is empty') 
+    if (!$("#inputted-tweet").val()){ // checks if tweet is empty when submit button is clicked
      
       const $errrorMessage = $('#error-message');
       let errorMessage = $errrorMessage.val();
@@ -66,12 +70,10 @@ $(() => {
 
       $errrorMessage.text(errorMessage)
 
-      $errrorMessage.addClass('errorIcon');
-
       return $errrorMessage.slideDown();
     }
 
-    if ($("#inputted-tweet").val().length > 140){
+    if ($("#inputted-tweet").val().length > 140){ // checks if tweet is within char max limit
       const $errrorMessage = $('#error-message');
       let errorMessage = $errrorMessage.val();
       errorMessage = "Tweet is too long";
@@ -81,14 +83,15 @@ $(() => {
       return $errrorMessage.slideDown();
     }
 
-    $('#error-message').slideUp();
+    $('#error-message').slideUp(); // if error message is down, this will slide it up when valid tweet is typed
+
 
     console.log($("#inputted-tweet").val())
 
     const serializedData = $form.serialize();
     // console.log(serializedData);
 
-    $.post('/tweets', serializedData, (response) => {
+    $.post('/tweets', serializedData, (response) => { // our tweet is posted to /tweets url to be re-fetched and rendered
       console.log(response);
       fetchTweets();
     });

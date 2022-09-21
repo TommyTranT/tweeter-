@@ -10,10 +10,8 @@ html {
   box-sizing: inherit;
 }
 
-/*
- * Global layout stuff
- */
 
+/* Global layout stuff */
 body {
   color: #545149;
   background-color: #f4f1ec;
@@ -21,12 +19,6 @@ body {
   font-family: 'Source Sans Pro', sans-serif;
 
 }
-
-
-
-/*
- * Additional CSS can be defined below or in other CSS files, as per instructions
- */
 
 /* Navigation Bar */
 nav {
@@ -38,7 +30,6 @@ nav {
   color: #FFFFFF;
   position: fixed; 
   width: 100%; 
-  
 }
 span {
   margin-left: 1.5em;
@@ -58,16 +49,13 @@ span {
   flex-direction: column;
   align-items: center;
 }
-
 .button {
   color: #FFFFFF;
   background-color: #4056A1;
 } 
 
 /* Profile Image and Name */
-
 .profile-hex {
-  padding-top: 120px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -78,12 +66,16 @@ span {
   background-image: url("https://www.transparenttextures.com/patterns/diamond-upholstery.png");
   color: #FFFFFF;
 }
+
+
 /* Main Container */
 .container {
   padding-top: 5%;
   padding-right: 5%;
   padding-left: 5%;
 }
+
+
 
 /* Character Counter */
 .colorRed {
@@ -95,9 +87,15 @@ span {
   display: flex;
   flex-direction: column;
 }
+#inputted-tweet {
+  border: none;
+}
 .under-textbox {
   display: flex;
   justify-content: space-between;
+  border-top-color: black;
+  border-top-style: solid;
+  padding-top: 2%;
 }
 .bold-text {
   font-weight: bold;
@@ -117,9 +115,15 @@ span {
 .name {
   font-size: inherit;
 }
+.handle {
+  padding-right: 5%;
+}
 .tweet-footer {
   display: flex;
   justify-content: space-between;
+  border-top-color: black;
+  border-top-style: groove;
+  padding-top: 2%;
 }
 .hover:hover {
   color:#f09800
@@ -129,9 +133,17 @@ span {
   border-style: groove;
   padding-top: 5%;
   padding-bottom: 5%;
+  padding-left: 5%;
+  padding-right: 5%;
   margin-top: 5%;
   margin-bottom: 5%;
 }
+.each-tweet:hover {
+  box-shadow: 0px 10px 20px 5px rgba(0, 0, 0, 0.5);
+  transform: translateY(-5px);
+}
+/* Box Shadow code from https://blog.logrocket.com/three-ways-style-css-box-shadow-effects/ */
+
 
 /* Error Message Slidedown */
 #error-message {
@@ -141,12 +153,59 @@ span {
   font-weight: bold;
   height: 60px;
   text-align: center;
-  width: 100%
 }
 
-.errorIcon {
-  color:red
+/* Phone Layout: maximum width of */
+@media only screen and (max-width: 420px) {
+  body {
+    font-size: 16px;
+  }
+  nav {
+    height: 72px;
+  }
 }
 
 
+  /* Tablet Layout: minimum width of 768px to maximum width of 1023px */
+  @media only screen and (min-width: 768px) and (max-width: 1023px) {
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+    padding-top: 0px;
+  }
+  #tweet-container {
+    width: 50%;
+  }
+  #new-tweet {
+    width: 50%
+  }
+}
 
+  /* Laptops / Desktops: minimum width of 1024px */
+  @media only screen and (min-width: 1024px) {
+  body {
+    display: flex;
+    flex-flow: row;
+  }
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+  #tweet-container {
+    padding-top:10%;
+    padding-left: 7%;
+    display: flex;
+    flex-direction: column;
+  
+  }
+  .display {
+    margin-top: 12%;
+    padding-left: 5%;
+    width: 38%;
+  }
+  .profile-hex {
+    padding-top: 0px;
+  
+  }
+}
